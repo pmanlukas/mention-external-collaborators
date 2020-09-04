@@ -1,4 +1,4 @@
-name: 'Mention external collaborators'
+name: 'Mention External collaborators'
 description: 'Gather all external collaborators and mention them on an issue'
 inputs:
   GitHub_Token:  # id of input
