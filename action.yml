@@ -1,13 +1,13 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Mention external collaborators'
+description: 'Gather all external collaborators and mention them on an issue'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
+  GitHub_Token:  # id of input
+    description: 'token to authenticate with GitHub'
+    required: false
+    default: ${{ github.token }}
 outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
+  comment_id:
+    description: 'The comment id'
 runs:
   using: 'node12'
   main: 'dist/index.js'
