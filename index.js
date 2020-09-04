@@ -9,8 +9,8 @@ async function run() {
 
     const context = github.context;
   
-    const octokit = new github.GitHub(github_token);
-    const results = await github.repos.listCollaborators({
+    const octokit = new github.getOctokit(github_token);
+    const results = await octokit.repos.listCollaborators({
       ...context.repo,
       affiliation: 'outside'
     });
@@ -20,7 +20,7 @@ async function run() {
 
     const body = `cc ${collaborators.join(' ')}`;
 
-    const new_comment = await github.issues.createComment({
+    const new_comment = await octokit.issues.createComment({
       ...context.repo,
       issue_number: issue_number,
       body: body
