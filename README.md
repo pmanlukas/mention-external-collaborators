@@ -2,6 +2,8 @@
 
 This action gathers the GitHub Id of the external collaborators and comments on an issue with an @-mention of these.
 
+created by @pmanlukas
+
 ## Inputs
 
 ### `GitHub_Token`
