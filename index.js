@@ -5,15 +5,10 @@ const github = require('@actions/github');
 async function run() {
   try {
     const github_token = core.getInput('GitHub_Token');
+    const issue_number = core.getInput('Issue_Number');
 
     const context = github.context;
-    if (context.payload.issue == null) {
-      core.setFailed('No issue found.');
-      return;
-    }
-
-    const issue_number = context.payload.issue.number;
-
+  
     const octokit = new github.GitHub(github_token);
     const results = await github.repos.listCollaborators({
       ...context.repo,

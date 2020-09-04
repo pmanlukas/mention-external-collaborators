@@ -5,6 +5,9 @@ inputs:
     description: 'token to authenticate with GitHub'
     required: false
     default: ${{ github.token }}
+  Issue_Number:
+    description: 'Number of issue'
+    required: true
 outputs:
   comment_id:
     description: 'The comment id'
