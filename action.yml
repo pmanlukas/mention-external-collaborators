@@ -1,10 +1,13 @@
-name: 'Mention external collaborators'
+name: 'Mention External collaborators'
 description: 'Gather all external collaborators and mention them on an issue'
 inputs:
   GitHub_Token:  # id of input
     description: 'token to authenticate with GitHub'
     required: false
     default: ${{ github.token }}
+  Issue_Number:
+    description: 'Number of issue'
+    required: true
 outputs:
   comment_id:
     description: 'The comment id'
